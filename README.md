@@ -1,6 +1,8 @@
-# stylable.io Site and Documentation
+# Stylable v1 Site and Documentation
 
-This is the source for the [Stylable site](https://stylable.io/).
+This is the source for the [Stylable v1 documentation site](https://wixplosives.github.io/stylable-v1-docs/).
+
+For the latest version of the documentation, see [stylable.io](https://stylable.io/).
 
 ## Installation
 
@@ -22,4 +24,4 @@ Deploy
 yarn deploy
 ```
 
-After deployment you can view the site at [stylable.io](https://stylable.io/)
+After deployment you can view the site at [https://wixplosives.github.io/stylable-v1-docs/](https://wixplosives.github.io/stylable-v1-docs/)
