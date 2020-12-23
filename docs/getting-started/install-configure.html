@@ -148,13 +148,13 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx create-react-app <span class="nt">--scripts-version</span> @stylable/react-scripts <span class="o">[</span>APP NAME]
 </code></pre></div></div>
 
-<p>For the <code class="highlighter-rouge">[APP NAME]</code> placeholder above, replace with the name of your project. Once you run the command, a directory with that same name is created. Go to that directory and run <code class="highlighter-rouge">yarn</code>, followed by <code class="highlighter-rouge">yarn start</code> to view the project in a browser, or <code class="highlighter-rouge">yarn build</code> to build your project’s target code.</p>
+<p>For the <code class="language-plaintext highlighter-rouge">[APP NAME]</code> placeholder above, replace with the name of your project. Once you run the command, a directory with that same name is created. Go to that directory and run <code class="language-plaintext highlighter-rouge">yarn</code>, followed by <code class="language-plaintext highlighter-rouge">yarn start</code> to view the project in a browser, or <code class="language-plaintext highlighter-rouge">yarn build</code> to build your project’s target code.</p>
 
-<p>The project includes several basic components and <strong>Stylable</strong> stylesheets which have the suffix <code class="highlighter-rouge">.st.css</code>.</p>
+<p>The project includes several basic components and <strong>Stylable</strong> stylesheets which have the suffix <code class="language-plaintext highlighter-rouge">.st.css</code>.</p>
 
 <h2 id="install-stylable-to-work-with-an-existing-project">Install Stylable to work with an existing project</h2>
 
-<p>To work with an existing <code class="highlighter-rouge">webpack</code> based project, you can install <a href="https://github.com/wix/stylable">Stylable</a> and the <a href="https://github.com/wix/stylable/tree/master/packages/webpack-plugin">@stylable/webpack-plugin</a> packages from our GitHub repositories.</p>
+<p>To work with an existing <code class="language-plaintext highlighter-rouge">webpack</code> based project, you can install <a href="https://github.com/wix/stylable">Stylable</a> and the <a href="https://github.com/wix/stylable/tree/master/packages/webpack-plugin">@stylable/webpack-plugin</a> packages from our GitHub repositories.</p>
 
 <p>Install <strong>Stylable</strong> and the <strong>@stylable/webpack-plugin</strong> as a dependency in your local project.</p>
 
@@ -177,16 +177,16 @@
 
 <p>Add <strong>Stylable</strong> to your Webpack configuration as follows:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">StylableWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@stylable/webpack-plugin'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">StylableWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@stylable/webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">...</span>
 <span class="p">{</span>
     <span class="nl">module</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">rules</span><span class="p">:</span> <span class="p">[</span>
+        <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">png|jpg|gif</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
             <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="na">loader</span><span class="p">:</span> <span class="s2">"url-loader"</span><span class="p">,</span>
+                <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">url-loader</span><span class="dl">"</span><span class="p">,</span>
                 <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
                     <span class="na">limit</span><span class="p">:</span> <span class="mi">8192</span>
                 <span class="p">}</span>
@@ -205,17 +205,17 @@
 
 <h2 id="types">Types</h2>
 
-<p>TypeScript requires to be made aware of Stylable in order to provide typings and module resolution for <code class="highlighter-rouge">*.st.css</code> files. To do this, create a <code class="highlighter-rouge">globals.d.ts</code> file in your <code class="highlighter-rouge">./src</code> directory and add the following declaration.</p>
+<p>TypeScript requires to be made aware of Stylable in order to provide typings and module resolution for <code class="language-plaintext highlighter-rouge">*.st.css</code> files. To do this, create a <code class="language-plaintext highlighter-rouge">globals.d.ts</code> file in your <code class="language-plaintext highlighter-rouge">./src</code> directory and add the following declaration.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">declare</span> <span class="nx">module</span> <span class="s1">'*.st.css'</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">stylesheet</span><span class="p">:</span> <span class="k">import</span><span class="p">(</span><span class="s1">'@stylable/runtime'</span><span class="p">).</span><span class="nx">RuntimeStylesheet</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">*.st.css</span><span class="dl">'</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">stylesheet</span><span class="p">:</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">@stylable/runtime</span><span class="dl">'</span><span class="p">).</span><span class="nx">RuntimeStylesheet</span><span class="p">;</span>
     <span class="k">export</span> <span class="k">default</span> <span class="nx">stylesheet</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>If your project TypeScript version is below <code class="highlighter-rouge">2.9</code> and does not support <a href="https://blogs.msdn.microsoft.com/typescript/2018/05/31/announcing-typescript-2-9/#import-types">import type</a>, copy the following snippet into your <code class="highlighter-rouge">globals.d.ts</code> file.</p>
+<p>If your project TypeScript version is below <code class="language-plaintext highlighter-rouge">2.9</code> and does not support <a href="https://blogs.msdn.microsoft.com/typescript/2018/05/31/announcing-typescript-2-9/#import-types">import type</a>, copy the following snippet into your <code class="language-plaintext highlighter-rouge">globals.d.ts</code> file.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">StateValue</span> <span class="o">=</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="nx">number</span> <span class="o">|</span> <span class="nx">string</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">StateValue</span> <span class="o">=</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="nx">number</span> <span class="o">|</span> <span class="nx">string</span><span class="p">;</span>
 
 <span class="kr">interface</span> <span class="nx">StateMap</span> <span class="p">{</span>
     <span class="p">[</span><span class="nx">stateName</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">StateValue</span><span class="p">;</span>
@@ -243,8 +243,8 @@
     <span class="nx">$cssStates</span><span class="p">(</span><span class="nx">stateMapping</span><span class="p">?:</span> <span class="nx">StateMap</span> <span class="o">|</span> <span class="kc">null</span><span class="p">):</span> <span class="nx">StateMap</span><span class="p">;</span>
 <span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="p">[</span><span class="na">localName</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">string</span> <span class="p">};</span>
 
-<span class="nx">declare</span> <span class="nx">module</span> <span class="s1">'*.st.css'</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="na">stylesheet</span><span class="p">:</span> <span class="nx">RuntimeStylesheet</span><span class="p">;</span>
+<span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">*.st.css</span><span class="dl">'</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">stylesheet</span><span class="p">:</span> <span class="nx">RuntimeStylesheet</span><span class="p">;</span>
     <span class="k">export</span> <span class="k">default</span> <span class="nx">stylesheet</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
