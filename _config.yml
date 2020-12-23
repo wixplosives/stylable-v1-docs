@@ -18,7 +18,7 @@ description: > # this means to ignore newlines until "baseurl:"
   build reusable, highly-performant components. 
   Each component exposes a style API that maps its internal parts so you can reuse components across teams without sacrificing stylability.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "stylable.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "wixplosives.github.io/stylable-v1-docs/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
@@ -30,18 +30,19 @@ kramdown:
 
 plugins:
   - jekyll-feed
-  
+
 include:
   - CNAME
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 exclude:
   - README.md
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
   - Gemfile
   - Gemfile.lock
-  - node_modules
+  - node_modules/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
